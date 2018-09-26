@@ -23,19 +23,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_button"
+        android:layout_marginTop="@dimen/margin_30"
         android:background="@color/colorAccent"
         android:onClick="onClickBtnAddStudents"
-        android:text="@string/btn_students"
-        />
+        android:text="@string/btn_students" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_100"
+        android:layout_marginTop="@dimen/margin_50"
         android:background="@color/colorBtnClear"
         android:onClick="onClickBtnClearStudents"
-        android:text="@string/clear_students"
         android:padding="@dimen/padding_clear"
-        />
+        android:text="@string/clear_students" />
 
 </LinearLayout>
