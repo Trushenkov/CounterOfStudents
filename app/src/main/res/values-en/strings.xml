@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Students Counter</string>
+    <string name="txt_students">students</string>
+    <string name="btn_students">Add student</string>
+    <string name="clear_students">Clear count</string>
+</resources>
