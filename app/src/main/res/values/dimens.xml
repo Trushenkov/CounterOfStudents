@@ -4,7 +4,8 @@
     <dimen name="layout_width">100dp</dimen>
     <dimen name="layout_height">100dp</dimen>
     <dimen name="txt_size">50sp</dimen>
-    <dimen name="margin_100">100dp</dimen>
     <dimen name="height_button">50dp</dimen>
     <dimen name="padding_clear">20dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
 </resources>
