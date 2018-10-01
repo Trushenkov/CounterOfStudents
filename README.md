@@ -5,6 +5,6 @@
 2. Сохранение состояние счетчика при повороте устройства
 
 ## Результаты работы приложения на реальном устройстве
-![screenshot_vertical]() 
+![screenshot_vertical](https://github.com/Trushenkov/CounterOfStudents/blob/master/app/src/main/res/mipmap-hdpi/screen_vertical.jpg) 
 
-![screenshot_horizontal]()
+![screenshot_horizontal](https://github.com/Trushenkov/CounterOfStudents/blob/master/app/src/main/res/mipmap-hdpi/screen_horizontal.jpg)
