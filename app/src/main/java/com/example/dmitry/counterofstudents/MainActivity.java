@@ -1,23 +1,25 @@
 package com.example.dmitry.counterofstudents;
 
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "StartActivity";
 
     private Integer counter = 5;
+    private TextView textView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        textView = findViewById(R.id.txt_counter);
+        Toast.makeText(this, "Method onCreate() is runned", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreate");
     }
 
@@ -25,17 +27,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart");
+        Toast.makeText(this, "Method onStart() is runned", Toast.LENGTH_SHORT).show();
         resetUI();
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onResume() {
         super.onResume();
-
-        TextView textView = findViewById(R.id.txt_counter);
-        textView.setText(counter.toString());
-
+        resetUI();
+        Toast.makeText(this, "Method onResume() is runned", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onResume");
     }
 
@@ -43,24 +43,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
+        Toast.makeText(this, "Method onPause() is runned", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop");
+        Toast.makeText(this, "Method onStop() is runned", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Log.d(TAG, "onRestart");
+        Toast.makeText(this, "Method onRestart() is runned", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
+        Toast.makeText(this, "Method onDestroy() is runned", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -68,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt("counter", counter);
         Log.d(TAG, "onSaveInstanceState");
+        Toast.makeText(this, "Method onSaveInstanceState() is runned", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -78,12 +84,13 @@ public class MainActivity extends AppCompatActivity {
             counter = savedInstanceState.getInt("counter");
         }
         Log.d(TAG, "onRestoreInstanceState");
+        Toast.makeText(this, "Method onRestoreInstanceState() is runned", Toast.LENGTH_SHORT).show();
     }
 
-    @SuppressLint("SetTextI18n")
     private void resetUI() {
-        ((TextView) findViewById(R.id.txt_counter)).setText(counter.toString());
+        textView.setText(String.valueOf(counter));
         Log.d(TAG, "resetUI");
+        Toast.makeText(this, "Method resetUI() is runned", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -91,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view
      */
-    @SuppressLint("SetTextI18n")
     public void onClickBtnAddStudents(View view) {
         counter++;
-        TextView counterView = findViewById(R.id.txt_counter);
-        counterView.setText(counter.toString());
+        resetUI();
+        Log.d(TAG, "onClickBtnAddStudents");
+        Toast.makeText(this, "Method onClickBtnAddStudents() is runned", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -103,10 +110,11 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view view
      */
-    @SuppressLint("SetTextI18n")
     public void onClickBtnClearStudents(View view) {
         counter = 0;
-        TextView counterView = findViewById(R.id.txt_counter);
-        counterView.setText(counter.toString());
+        resetUI();
+        Log.d(TAG, "onClickBtnClearStudents");
+        Toast.makeText(this, "Method onClickBtnClearStudents() is runned", Toast.LENGTH_SHORT).show();
     }
+
 }
